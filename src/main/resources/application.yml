@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+zuul:
+  routes:
+    mtg-card-catalogue:
+      path: /mtg-card-catalogue/**
+      stripPrefix: false
+    mtg-price-updater:
+      path: /mtg-price-updater/**
+      stripPrefix: false
+    mtg-my-card-collection:
+      path: /mtg-my-card-collection/**
+      stripPrefix: false
+    mtg-image-server:
+      path: /mtg-image-server/**
+      stripPrefix: false
+    default-routing:
+      path: /
+      serviceId: mtg-card-catalogue
+      stripPrefix: false
+
+ribbon:
+  eureka:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
