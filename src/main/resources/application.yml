@@ -15,10 +15,6 @@ zuul:
     mtg-image-server:
       path: /mtg-image-server/**
       stripPrefix: false
-    default-routing:
-      path: /
-      serviceId: mtg-card-catalogue
-      stripPrefix: false
 
 ribbon:
   eureka:
